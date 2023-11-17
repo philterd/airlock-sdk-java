@@ -28,7 +28,7 @@ public interface AirlockService {
 
 	// Policies
 
-	@Headers({"Accept: text/plain", "Content-Type: text/plain"})
+	@Headers({"Accept: application/json", "Content-Type: text/plain"})
 	@POST("/api/policies/apply")
 	Call<ApplyResponse> apply(@Query("c") String context, @Query("d") String documentId, @Query("p") String policyName, @Body String text);
 
