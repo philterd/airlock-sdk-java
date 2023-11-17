@@ -19,7 +19,7 @@ Release dependencies are available in Maven Central.
 
 ```
 <dependency>
-  <groupId>com.mtnfog</groupId>
+  <groupId>ai.philterd</groupId>
   <artifactId>airlock-sdk-java</artifactId>
   <version>1.0.0</version>
 </dependency>
