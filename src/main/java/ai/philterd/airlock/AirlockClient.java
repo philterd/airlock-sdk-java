@@ -148,9 +148,9 @@ public class AirlockClient extends AbstractClient {
 	 * @return The filter {@link ApplyResponse}.
 	 * @throws IOException Thrown if the request can not be completed.
 	 */
-	public ApplyResponse explain(String context, String documentId, String policyName, String text) throws IOException {
+	public ApplyResponse apply(String context, String documentId, String policyName, String text) throws IOException {
 
-		final Response<ApplyResponse> response = service.apply(context, policyName, text).execute();
+		final Response<ApplyResponse> response = service.apply(context, documentId, policyName, text).execute();
 
 		if(response.isSuccessful()) {
 
@@ -212,7 +212,7 @@ public class AirlockClient extends AbstractClient {
 	 */
 	public List<String> getPolicies() throws IOException {
 
-		final Response<List<String>> response = service.Policy().execute();
+		final Response<List<String>> response = service.policy().execute();
 
 		if(response.isSuccessful()) {
 
@@ -246,7 +246,7 @@ public class AirlockClient extends AbstractClient {
 	 */
 	public String Policy(String policyName) throws IOException {
 
-		final Response<String> response = service.Policy(policyName).execute();
+		final Response<String> response = service.policy(policyName).execute();
 
 		if(response.isSuccessful()) {
 

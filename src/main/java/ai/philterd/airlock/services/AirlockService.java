@@ -30,15 +30,15 @@ public interface AirlockService {
 
 	@Headers({"Accept: text/plain", "Content-Type: text/plain"})
 	@POST("/api/policies/apply")
-	Call<ApplyResponse> apply(@Query("c") String context, @Query("p") String policyName, @Body String text);
+	Call<ApplyResponse> apply(@Query("c") String context, @Query("d") String documentId, @Query("p") String policyName, @Body String text);
 
 	@Headers({"Accept: application/json"})
 	@GET("/api/policies")
-	Call<List<String>> Policy();
+	Call<List<String>> policy();
 
 	@Headers({"Accept: text/plain"})
 	@GET("/api/policies/{name}")
-	Call<String> Policy(@Path("name") String policyName);
+	Call<String> policy(@Path("name") String policyName);
 
 	@Headers({"Content-Type: application/json"})
 	@POST("/api/policies")
